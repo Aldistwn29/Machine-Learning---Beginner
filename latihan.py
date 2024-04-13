@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+
 dataset = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/pythonTutorial/online_raw.csv")
 
 # Eksplorasi Data: Memahami Data dengan Statistik - Part 1
@@ -32,7 +34,7 @@ print('\nKorelasi TrafficType-Weekend:', new_data_corr.loc['TrafficType','Weeken
 plt.rcParams['figure.figsize'] = (12,5)
 plt.subplot(1, 2, 1)
 sns.countplot(data = dataset, x='Revenue', palette='pastel')
-plt.title('Buy or Not', fontsize=28)
+plt.title('Buy or Not', fontsize=20)
 plt.xlabel('Revenue or not', fontsize=14)
 plt.ylabel('count', fontsize=14)
 
@@ -43,3 +45,4 @@ plt.title('Purchase on Weekends', fontsize = 20)
 plt.xlabel('Weekend or not', fontsize = 14)
 plt.ylabel('count', fontsize = 14)
 plt.show()
+
