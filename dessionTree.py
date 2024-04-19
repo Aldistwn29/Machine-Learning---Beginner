@@ -1,6 +1,6 @@
 import pandas as pd
 dataset = pd.read_csv('https://storage.googleapis.com/dqlab-dataset/pythonTutorial/online_raw.csv')
-dataset.fillna(dataset.mean(), inplace = True)
+
 
 from sklearn.preprocessing import LabelEncoder
 LE = LabelEncoder()
@@ -9,6 +9,8 @@ LE = LabelEncoder()
 dataset['VisitorType'] = LE.fit_transform(dataset['VisitorType'])
 X = dataset.drop(['Revenue'], axis = 1)
 y = dataset['Revenue']
+
+dataset.fillna(dataset.mean(), inplace = True)
 
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
